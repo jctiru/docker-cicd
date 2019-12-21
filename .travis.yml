@@ -6,4 +6,4 @@ before_install:
   - docker build -t jctiru/docker-cicd -f Dockerfile.dev .
 
 script:
-  - docker run jctiru/docker-cicd npm run test -- --coverage
+  - docker run -e CI=true jctiru/docker-cicd npm run test -- --coverage
