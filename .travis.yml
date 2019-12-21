@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t jctiru/docker-cicd -f Dockerfile.dev .
+
+script:
+  - docker run jctiru/docker-cicd npm run test -- --coverage
